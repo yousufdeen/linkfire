@@ -1,0 +1,15 @@
+<div class="breadcrumb">
+    <ul class="breadcrumb_list">
+        <li class="breadcrumb_list__item"><LinkTo @route={{'music'}} class="breadcrumb_list__item-link">{{t "breadcrumb.home"}}</LinkTo></li>
+        <li class="breadcrumb_list__item">|</li>
+        <li class="breadcrumb_list__item"><LinkTo @route={{'music.genre'}} class="breadcrumb_list__item-link">{{t "breadcrumb.genre"}}</LinkTo></li>
+    </ul>
+</div>
+
+<MusicCarousel 
+    @heading="Genre" 
+    @route="music.genre" 
+    @record={{model}}
+    @detailLink="music.genre.detail"
+    @showMoreLink={{false}}
+/>

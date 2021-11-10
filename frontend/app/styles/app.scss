@@ -1,0 +1,17 @@
+@import "layout/abstracts/mixins";
+@import "layout/abstracts/variables";
+
+@import "layout/base/base";
+
+@import "components/header";
+@import "components/music-list";
+@import "components/music-carousel";
+@import "components/album-details";
+@import "components/genre-details";
+@import "components/artist-details";
+@import "components/songs-list";
+@import "components/search-filter";
+
+
+@import "layout/common";
+

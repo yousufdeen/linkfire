@@ -1,0 +1,31 @@
+body { 
+    padding:0;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.not-found {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: var(--text-color-primary);
+}
+
+.breadcrumb {
+    margin: 2rem 1rem;
+
+    &_list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        &__item {
+            margin-right: 0.5rem;
+
+            &-link {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

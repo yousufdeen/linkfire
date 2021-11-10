@@ -1,0 +1,29 @@
+<div class="breadcrumb">
+    <ul class="breadcrumb_list">
+        <li class="breadcrumb_list__item"><LinkTo @route={{'music'}} class="breadcrumb_list__item-link">{{t "breadcrumb.home"}}</LinkTo></li>
+        <li class="breadcrumb_list__item">|</li>
+        <li class="breadcrumb_list__item"><LinkTo @route={{'music.genre'}} class="breadcrumb_list__item-link">{{t "breadcrumb.genre"}}</LinkTo></li>
+    </ul>
+</div>
+
+<div class="genre-details_header">
+    <div class="genre-details_header__imgbox">
+        <picture>
+            <source media="(max-width: 700px)" srcset={{genre.imgSmallPath}}>
+            <source media="(min-width: 701px)" srcset={{genre.imgMediumPath}}>
+            <source media="(min-width: 1200px)" srcset={{genre.imgPath}}>
+            
+            <img src={{genre.imgPath}} alt={{genre.title}}  class="album-details_header__img">
+        </picture>
+    </div>
+
+    <div class="genre-details_header__title">
+        <h2>{{genre.title}}</h2>
+        {{#if genre.songs}}
+            <button class="genre-details_header__play-btn">{{t "genreDetail.playAll"}}</button>
+        {{/if}}
+        
+    </div>
+</div>
+
+<SongsList @record={{genre}} />

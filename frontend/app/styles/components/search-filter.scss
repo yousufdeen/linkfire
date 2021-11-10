@@ -1,0 +1,86 @@
+.search {
+    
+    &_container {
+        position: relative;
+
+    }
+
+    &_inputbox {
+        width: 40rem;
+
+        @include respond(phone) {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        &__field {
+            width: 100%;
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 10px;
+            border: 0;
+            box-shadow: 1px 1px 3px $inputShadowColor;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/61/61088.png');
+            background-size: 16px;
+            background-repeat: no-repeat;
+            background-position: 98% 10px;
+            padding-right: 2.5rem;
+            
+        }
+    }
+
+    &_list {
+        position: absolute;
+        width: 50rem;
+        background: $color-white;
+        margin-top: 2px;
+        z-index: 100;
+        box-shadow: 1px 2px 4px $searchListShadow;
+        max-height: 75vh;
+        overflow-y: scroll;
+
+        @include respond(phone) {
+            width: 98%;
+        }
+
+        &__loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0.5rem;
+        }
+    }
+
+    &_record {
+
+        &-section {
+            padding: 1rem;
+        }
+
+        &-heading {
+            font-size: 1.5rem;
+            color: var(--text-color-primary);
+            margin-bottom: 1rem;
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            &__items {
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+
+                &-title {
+                    padding: 0.5rem;
+                    box-shadow: 0px 0px 2px $searchItemTitleShadow;
+                    border-radius: 10px;
+                    background: $searchItemTitle;
+                }
+                &-link {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.header {
+    height: 6rem;
+    background: $headerBackground;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+    @include respond(phone) {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 1rem;
+    }
+
+    &_logo {
+        margin: 0 2rem;
+
+        &__img {
+            height: 4rem;
+        }
+
+        @include respond(phone) {
+            margin: 0.5rem;
+        }
+    }
+
+    &_searchbox {
+        margin: 0 2rem;
+        flex: 1;
+
+        @include respond(phone) {
+            flex: unset;
+            width: 100%;
+            margin: 0.5rem;
+        }
+    }
+}

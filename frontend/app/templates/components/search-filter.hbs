@@ -1,0 +1,90 @@
+<div class="search_container">
+    <div class="search_inputbox">
+        <Input @value={{searchText}} 
+            class="search_inputbox__field" 
+            placeholder={{t "searchFilter.searchInputPlaceholder"}}
+            {{on "keyup" this.onSearch}}
+        />
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="search_list">
+        {{#if loading}}
+            <div class="search_list__loading">
+                <svg width="70" height="50">
+                    <path d="M20 20 A 1 1 0 0 1 50 20" 
+                        stroke="#fe625a"
+                        stroke-width="5"
+                        fill="transparent" >
+                    
+                    <animateTransform 
+                            attributeName="transform"
+                            type="rotate"
+                            dur="1s"
+                            from="0 35 20"
+                            to="360 35 20"
+                            repeatCount="indefinite" />
+                    
+                    </path>
+                </svg>
+            </div>
+        {{/if}}
+        {{#if searchResult}}
+            <div class="search_record">
+                <div class="search_record-section">
+                    <div class="search_record-heading">{{t 'searchFilter.albums'}}</div>
+                        <div class="search_record-list">
+                            {{#each searchResult.albums as |album|}}
+                                <div class="search_record-list__items">
+                                    <div class="search_record-list__items-title">
+                                        <a href="#" class="search_record-list__items-link" {{action 'redirectTo' 'music.albums.detail' album}}>{{album.title}}</a>
+                                    </div>
+                                </div>
+                            {{else}}
+                                <div class="no-search-record">{{t 'searchFilter.noAlbumsFound'}}</div>
+                            {{/each}}
+                        </div>
+
+                    <div class="search_record-heading">{{t 'searchFilter.genre'}}</div>
+                        <div class="search_record-list">
+                            {{#each searchResult.genres as |genre|}}
+                                <div class="search_record-list__items">
+                                    <div class="search_record-list__items-title">
+                                        <a href="#" class="search_record-list__items-link" {{action 'redirectTo' 'music.genre.detail' genre}}>{{genre.title}}</a>
+                                    </div>
+                                </div>
+                            {{else}}
+                                <div class="no-search-record">{{t 'searchFilter.noGenreFound'}}</div>
+                            {{/each}}
+                        </div>
+                    
+                    <div class="search_record-heading">{{t 'searchFilter.songs'}}</div>
+                        <div class="search_record-list">
+                            {{#each searchResult.songs as |song|}}
+                                <div class="search_record-list__items">
+                                    <div class="search_record-list__items-title">
+                                        <a href="#" class="search_record-list__items-link" {{action 'redirectTo' 'music.songs.detail' song}}>{{song.track}}</a>
+                                    </div>
+                                </div>
+                            {{else}}
+                                <div class="no-search-record">{{t 'searchFilter.noSongsFound'}}</div>
+                            {{/each}}
+                        </div>
+
+                    <div class="search_record-heading">{{t 'searchFilter.artists'}}</div>
+                        <div class="search_record-list">
+                            {{#each searchResult.artists as |artist|}}
+                                <div class="search_record-list__items">
+                                    <div class="search_record-list__items-title">
+                                        <a href="#" class="search_record-list__items-link" {{action 'redirectTo' 'music.artist.detail' artist}}>{{artist.name}}</a>
+                                    </div>
+                                </div>
+                            {{else}}
+                                <div class="no-search-record">{{t 'searchFilter.noArtistFound'}}</div>
+                            {{/each}}
+                        </div>
+                    
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

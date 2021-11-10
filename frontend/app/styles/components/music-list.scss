@@ -1,0 +1,17 @@
+.music-list {
+
+    &_nav {
+        margin: 1.5rem;
+        text-align: right;
+
+        &__link {
+            background: $linkColor;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+                
+            &:link, &:visited, &:focus, &:active {
+                color: $color-white;
+            }
+        }
+    }
+}

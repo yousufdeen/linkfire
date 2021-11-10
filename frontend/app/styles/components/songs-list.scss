@@ -1,0 +1,108 @@
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+
+    &_item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        border-bottom: 1px solid $songItemBorder;
+        margin-top: 1.5rem;
+
+        &:first-child {
+            @include respond(phone) {
+                display: none;
+            }
+        }
+
+        @include respond(phone) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            & > div {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__heading {
+            font-size: 1.5rem;
+            color: var(--text-color-primary);
+        }
+
+        &__track-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            @include respond(phone) {
+                flex-direction: column;
+            }
+        }
+
+        &__artist-section {
+            @include respond(phone) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        &__img {
+            height: 50px;
+            width: 50px;
+            object-fit: fill;
+
+            @include respond(phone) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+
+        &__track {
+            margin-left: 1rem;
+            color: var(--text-color-primary);
+            font-size: 1.3rem;
+
+            @include respond(phone) {
+                font-size: 1.6rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        &__artists {
+            border-radius: 10px;
+            padding: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            border: 1px solid $songItemArtistBorder;
+            display: inline-block;
+
+            @include respond(phone) {
+                font-size: 1.6rem;
+            }
+        }
+
+        &__duration {
+            @include respond(phone) {
+                font-size: 1.6rem;
+            }
+        }
+
+        & > div {
+            flex: 1;
+        }
+    }
+
+    .center-align {
+        text-align: center;
+    }
+
+    .right-align {
+        text-align: right;
+        margin-right: 2rem;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="songs-list_item">
+    <div class="songs-list_item__heading">{{t "songsList.track"}}</div>
+    <div class="songs-list_item__heading center-align">{{t "songsList.artists"}}</div>
+    <div class="songs-list_item__heading right-align">{{t "songsList.duration"}}</div>
+</div>
+
+{{#each record.songs as |song|}}
+    <div class="songs-list_item">
+        <div class="songs-list_item__track-section">
+            <img src={{song.imgPath}} width="50" height="50" class="songs-list_item__img" />
+            <div class="songs-list_item__track">{{song.track}}</div>
+        </div>
+
+        <div class="center-align songs-list_item__artist-section">
+            {{#each song.artists as |artist|}}
+                <span class="songs-list_item__artists">{{artist.name}}</span>
+            {{/each}}
+        </div>
+
+        <div class="right-align center-align songs-list_item__duration">
+            {{song.duration}}
+        </div>
+
+    </div>
+{{else}}
+    <div class="not-found center-align">{{t "songsList.noSongsFound"}}</div>
+{{/each}}

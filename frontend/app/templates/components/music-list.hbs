@@ -1,0 +1,27 @@
+<div class="music-list_nav">
+    <LinkTo @route="music.songs" class="music-list_nav__link">{{t "musicList.songs"}}</LinkTo>
+</div>
+
+<MusicCarousel 
+    @heading={{t "musicList.albums"}}
+    @route="music.albums" 
+    @record={{@albums}}
+    @detailLink="music.albums.detail"
+    @showMoreLink={{true}}
+/>
+
+<MusicCarousel 
+    @heading={{t "musicList.genre"}}
+    @route="music.genre" 
+    @record={{@genres}}
+    @detailLink="music.genre.detail"
+    @showMoreLink={{true}}
+/>
+
+<MusicCarousel 
+    @heading={{t "musicList.artists"}}
+    @route="music.artist" 
+    @record={{@artists}}
+    @detailLink="music.artist.detail"
+    @showMoreLink={{true}}
+/>

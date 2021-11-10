@@ -1,0 +1,33 @@
+<div class="music-carousel_header">
+    <h1 class="music-carousel_header__title">{{@heading}}</h1>
+    {{#if @showMoreLink}}
+        <LinkTo @route={{@route}} class="music-carousel_header__link">{{t 'musicCarousel.seeMore'}}</LinkTo>
+    {{/if}}
+    
+</div>
+
+<div class="music-carousel_grid">
+    {{#each @record as |data|}}
+    <div class="music-carousel_grid-items">
+        <div class="music-carousel_grid-items__imgbox">
+            <LinkTo @route="{{@detailLink}}" @model={{data}} class="music-carousel_grid-items__link">
+                <img src={{data.imgPath}} class="music-carousel_grid-items__img" />
+            </LinkTo>
+        </div>
+        <div class="music-carousel_grid-items__title">
+            <LinkTo @route="{{@detailLink}}" @model={{data}} class="music-carousel_grid-items__link">
+                {{#if data.title}}
+                    {{data.title}}
+                {{else if data.track}}
+                    {{data.track}}
+                {{else}}
+                    {{data.name}}
+                {{/if}}
+            </LinkTo></div>
+    </div>
+    {{else}}
+        <div class="music-carousel_grid-items">
+            <div class="music-carousel_grid-items__not-found">{{t 'musicCarousel.noRecordFound'}}</div>
+        </div>
+    {{/each}}
+</div>
